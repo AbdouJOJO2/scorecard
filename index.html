@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Content-to-Client Scorecard — تقييم تشخيصي لمدربي الأونلاين.">
+  <title>Content-to-Client Scorecard</title>
+  <style>
+    @font-face{font-family:FormaArabic;src:url('alfont_com_FormaDJRArabicBanner-Regular-Testing.otf') format('opentype');font-display:swap}
+    @font-face{font-family:FormaArabic;src:url('FormaDJRArabicText-Bold-Testing.otf') format('opentype');font-weight:700;font-display:swap}
+    @font-face{font-family:ArsenicaArabic;src:url('alfont_com_Arsenica-Arabic-Antiqua-Demibold-TRIAL.ttf') format('truetype');font-weight:600;font-display:swap}
+    :root{--ink:#161313;--ink-2:#251f1c;--paper:#eee5d7;--cream:#f8f2e9;--sand:#d8c5ad;--bronze:#b38c63;--muted:#b8ada1;--line:rgba(245,237,226,.15);--warning:#fa9e94;--warning-bg:rgba(170,64,52,.18);--shadow:0 28px 80px rgba(0,0,0,.28)}
+    *{box-sizing:border-box}html{background:var(--ink)}body{min-height:100vh;margin:0;background:radial-gradient(circle at 12% 0%,#49352b 0,transparent 30rem),radial-gradient(circle at 96% 100%,#2d1f1a 0,transparent 34rem),linear-gradient(135deg,#171414,#241a16 54%,#110f0f);color:var(--cream);font-family:FormaArabic,Tahoma,Arial,sans-serif;font-size:17px;-webkit-font-smoothing:antialiased}button,input,textarea{font:inherit}button{cursor:pointer}.numeral,.step-number,.plan ol::marker{font-family:"Segoe UI",Tahoma,Arial,sans-serif;font-weight:600;font-variant-numeric:lining-nums} .shell{width:min(784px,calc(100% - 32px));margin:auto;padding:clamp(22px,5vw,52px) 0 65px}.wordmark{display:flex;align-items:center;gap:9px;color:var(--sand);font-size:11px;letter-spacing:.14em;direction:ltr;margin:0 0 20px}.wordmark:before{content:"";width:24px;height:1px;background:var(--bronze)}.card{background:linear-gradient(145deg,rgba(45,36,31,.94),rgba(25,21,19,.94));border:1px solid var(--line);box-shadow:var(--shadow);border-radius:11px}.intro{padding:clamp(28px,6vw,62px)}.eyebrow,.stage{color:var(--sand);font-size:13px;letter-spacing:.06em;margin:0 0 18px}.eyebrow:before{content:"✦";padding-left:8px;color:var(--bronze)}h1,h2{font-family:ArsenicaArabic,Georgia,serif;font-weight:600;letter-spacing:-.025em;line-height:1.25;margin:0}h1{font-size:clamp(32px,5.2vw,50px);max-width:14ch}h2{font-size:clamp(28px,4.4vw,40px);max-width:17ch}.lead{color:#d0c4b8;font-size:clamp(16px,2vw,18px);line-height:1.9;max-width:51ch;margin:25px 0}.what-you-get{margin:30px 0;padding:0;list-style:none;border-top:1px solid var(--line)}.what-you-get li{color:#c8bcb0;border-bottom:1px solid var(--line);padding:13px 0;font-size:15px}.what-you-get li:before{content:"—";color:var(--bronze);padding-left:10px}.notice{border:1px solid rgba(250,158,148,.55);background:var(--warning-bg);border-radius:6px;color:#ffd4cf;line-height:1.75;font-size:14px;padding:14px 17px;margin:28px 0}.notice strong{color:#fff}.button{border:0;border-radius:5px;background:linear-gradient(105deg,#93704e,#d2b18b);color:#1d1612;min-height:52px;padding:13px 22px;font-weight:700;transition:transform .18s ease,filter .18s ease;box-shadow:0 9px 25px rgba(0,0,0,.2)}.button:hover{filter:brightness(1.08);transform:translateY(-1px)}.button:focus-visible,.option:focus-visible{outline:2px solid #f0ceb0;outline-offset:3px}.button.secondary{background:transparent;border:1px solid var(--line);color:var(--cream);box-shadow:none}.quiz{padding:clamp(22px,5vw,44px)}.quiz-head{display:flex;align-items:end;justify-content:space-between;gap:12px;color:var(--muted);font-size:13px;margin-bottom:14px}.stage{margin:0;color:var(--sand)}.progress{height:3px;background:rgba(255,255,255,.1);overflow:hidden;margin-bottom:32px}.progress>span{display:block;width:0;height:100%;background:linear-gradient(90deg,#9b7551,#ebd3b5);transition:width .35s ease}.q-number{font-size:13px;letter-spacing:.08em;color:var(--sand);margin:0 0 13px}.q-title{font-family:ArsenicaArabic,Georgia,serif;font-weight:600;line-height:1.4;font-size:clamp(23px,3.8vw,31px);max-width:22ch;margin:0 0 25px}.options{display:grid;gap:10px}.option{width:100%;border:1px solid var(--line);border-radius:6px;background:rgba(255,255,255,.025);display:flex;align-items:center;gap:13px;padding:16px 17px;color:#eee4db;text-align:right;font-size:clamp(16px,2.2vw,18px);line-height:1.75;transition:border .18s ease,background .18s ease}.option:hover,.option.selected{border-color:#caa77e;background:rgba(203,164,122,.11)}.radio{height:18px;width:18px;border:1px solid #978a80;border-radius:50%;flex:0 0 auto}.option.selected .radio{border:5px solid #e5c6a5}.other-label{font-weight:700;color:#fff}.other-note{font-size:14px;line-height:1.7;color:#e5c8aa;margin:16px 0 8px}.other-field,.text-field{width:100%;min-height:130px;resize:vertical;border:1px solid var(--line);border-radius:5px;background:rgba(255,255,255,.035);color:var(--cream);padding:14px;line-height:1.75;outline:0}.other-field:focus,.text-field:focus,.single-input:focus{border-color:#caa77e}.field-label{color:#d0c4b8;font-size:15px;display:block;margin:0 0 10px}.helper{color:var(--muted);font-size:13px;line-height:1.7;margin:10px 0 0}.single-input{width:100%;border:1px solid var(--line);border-radius:5px;background:rgba(255,255,255,.035);color:var(--cream);padding:14px;outline:0}.error{color:#ffb2aa;font-size:14px;margin:14px 0 0}.actions{display:flex;justify-content:space-between;gap:12px;margin-top:29px}.actions .button{min-width:130px}.hidden{display:none!important}.loading{text-align:center;padding:clamp(56px,14vw,105px) 25px}.spinner{width:38px;height:38px;border-radius:50%;border:2px solid rgba(223,198,170,.2);border-top-color:#dec09e;margin:0 auto 24px;animation:spin .8s linear infinite}.loading p{color:#d9cbbd;line-height:1.8;margin:0}.result{padding:clamp(28px,6vw,58px)}.result-label{color:var(--sand);font-size:13px;letter-spacing:.08em;margin:0 0 13px}.result-copy{font-size:17px;line-height:1.9;color:#d1c5b9;max-width:56ch;margin:20px 0 25px}.plan{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin:25px 0}.plan h3{font-family:ArsenicaArabic,Georgia,serif;font-size:22px;font-weight:600;margin:0}.plan ol{line-height:1.95;color:#d2c5b8;font-size:16px;margin:13px 0 0;padding-right:24px}.magnet{padding:21px;border:1px solid rgba(211,175,133,.36);border-radius:7px;background:linear-gradient(135deg,rgba(184,140,100,.17),rgba(255,255,255,.02));margin:25px 0}.magnet small{display:block;color:var(--sand);letter-spacing:.07em}.magnet h3{font-family:ArsenicaArabic,Georgia,serif;font-size:22px;font-weight:600;margin:9px 0;color:#fff}.magnet p{line-height:1.65;color:#d5c8ba;margin:0}.result-actions{display:flex;flex-wrap:wrap;gap:10px}.result .button{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;text-align:center;margin-top:0}.instagram-button{background:transparent!important;border:1px solid rgba(224,173,137,.68)!important;color:#f3dbc7!important;box-shadow:none!important}.instagram-icon{width:19px;height:19px;flex:none}.keyword-note{color:var(--muted);font-size:15px;line-height:1.8;margin:17px 0 0}.keyword{color:#f0d0ab;font-family:"Segoe UI",Tahoma,Arial,sans-serif;letter-spacing:.12em;font-size:18px;direction:ltr;display:inline-block}.keyword-copy{display:inline-flex;align-items:center;gap:6px;background:transparent;color:#f0d0ab;border:1px solid rgba(224,173,137,.45);border-radius:4px;margin:8px 0 0;padding:8px 11px;font-size:13px}.footer{text-align:center;color:#90857c;font-size:12px;line-height:1.8;margin:24px auto 0;max-width:60ch}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,130px);background:#f7efe5;color:#271d17;border-radius:5px;padding:12px 16px;font-size:13px;box-shadow:0 12px 35px #0008;transition:transform .24s ease;z-index:3}.toast.show{transform:translate(-50%,0)}@keyframes spin{to{transform:rotate(1turn)}}@media(max-width:500px){.shell{width:min(100% - 20px,784px)}.intro,.quiz,.result{border-radius:8px}.actions{flex-direction:column-reverse}.actions .button{width:100%}.result-actions{flex-direction:column}.result-actions .button{width:100%}.quiz-head{align-items:flex-start;flex-direction:column}.q-title{max-width:none}}
+    /* Refinements: compact reading scale and clear red guidance. */
+    body{font-size:16px}h1{font-size:clamp(29px,4.5vw,42px);max-width:16ch}h2{font-size:clamp(26px,4vw,35px);max-width:19ch}.q-title{font-size:clamp(21px,3.4vw,28px);max-width:24ch}.option{padding:15px 16px;font-size:clamp(16px,2vw,17px);line-height:1.7}.other-note,.helper{color:#ffaaa3}.loading h2{margin:0 0 12px;max-width:none}.final-progress{max-width:300px;height:5px;background:rgba(255,255,255,.12);margin:26px auto 8px;overflow:hidden;border-radius:999px}.final-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#a4764d,#f0d1ae);transition:width .55s ease}.final-percent{color:var(--sand)!important;font-family:"Segoe UI",Tahoma,Arial,sans-serif;font-size:13px!important}.youtube-button{margin-top:24px!important;width:100%}.youtube-icon{width:22px;height:22px;flex:none}
+
+    /* ===== Premium look: soft amber -> black gradient, pill buttons, ticker, flags ===== */
+    html{background:#000}
+    body{background:radial-gradient(120% 52% at 50% -6%,rgba(255,214,150,.20) 0%,rgba(232,140,50,.09) 40%,transparent 72%),linear-gradient(180deg,#2b1b10 0%,#150c07 30%,#070403 62%,#000 100%);background-attachment:fixed}
+    .progress>span{background:linear-gradient(90deg,#ff6a00,#ffb56b)}
+    .final-progress span{background:linear-gradient(90deg,#ff6a00,#ffb56b)}
+    .button.button{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:space-between;gap:16px;min-height:58px;padding:9px 28px 9px 9px;border:0;border-radius:999px;font-family:FormaArabic,Tahoma,Arial,sans-serif;font-weight:400;font-size:18px;line-height:1.3;letter-spacing:0;color:#fff4e8;text-decoration:none;text-shadow:0 1px 2px rgba(110,40,0,.35);background:radial-gradient(130% 160% at 50% 0%,#ff9d52 0%,#ff6d05 52%,#e85800 100%);box-shadow:inset 0 1px 1px rgba(255,255,255,.6),inset 0 -3px 8px rgba(255,255,255,.22),inset 0 0 22px rgba(255,150,60,.55),0 16px 36px -10px rgba(255,106,0,.6);transition:transform .2s ease,filter .2s ease}
+    .button.button:hover{filter:brightness(1.07) saturate(1.05);transform:translateY(-2px)}
+    .button.button::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background-image:radial-gradient(rgba(255,255,255,.45) .8px,transparent 1px);background-size:4px 4px;opacity:.28;-webkit-mask-image:linear-gradient(270deg,#000,transparent 55%);mask-image:linear-gradient(270deg,#000,transparent 55%);pointer-events:none}
+    .button.button::after{content:"";flex:none;width:42px;height:42px;border-radius:50%;background:#fff url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%230b0806%22 stroke-width=%222.4%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M20 12H5M11 5.5 4.5 12l6.5 6.5%22/%3E%3C/svg%3E") center/22px 22px no-repeat;box-shadow:0 3px 8px rgba(110,40,0,.3)}
+    .button.button.has-icon::after{display:none}
+    .btn-icon{flex:none;width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 3px 8px rgba(110,40,0,.3)}
+    .btn-icon svg{width:21px;height:21px;display:block}
+    .button.button.secondary{padding:9px 9px 9px 28px;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid rgba(255,160,80,.35);color:#ffe9d4;text-shadow:none;box-shadow:inset 0 1px 1px rgba(255,255,255,.18),0 10px 26px -12px rgba(0,0,0,.8)}
+    .button.button.secondary::before{display:none}
+    .button.button.secondary::after{order:-1;background:#fff url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%230b0806%22 stroke-width=%222.4%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M4 12h15M13 5.5l6.5 6.5-6.5 6.5%22/%3E%3C/svg%3E") center/22px 22px no-repeat}
+    .button.instagram-button{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.02))!important;border:1px solid rgba(255,160,80,.4)!important;color:#ffe9d4!important;text-shadow:none;box-shadow:inset 0 1px 1px rgba(255,255,255,.18),0 10px 26px -12px rgba(0,0,0,.8)!important}
+    .button.instagram-button::before{display:none}
+    .keyword-copy{border-radius:999px;padding:9px 18px;background:rgba(255,140,50,.08);border-color:rgba(255,160,80,.45)}
+    #start{min-width:230px}
+    .flag{flex:none;font-size:27px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+    .ticker{position:sticky;top:0;z-index:20;height:42px;display:flex;align-items:center;overflow:hidden;direction:ltr;background:linear-gradient(90deg,#140a04,#5a2407 18%,#7a3008 50%,#5a2407 82%,#140a04);border-bottom:1px solid rgba(255,160,80,.3);box-shadow:0 8px 24px -10px rgba(255,106,0,.45)}
+    .ticker-track{display:flex;flex:none;width:max-content;animation:tick 32s linear infinite}
+    .ticker:hover .ticker-track{animation-play-state:paused}
+    .tick-item{direction:rtl;white-space:nowrap;padding:0 30px;color:#ffe9d2;font-size:14px;display:inline-flex;align-items:center;gap:30px}
+    .tick-item i{font-style:normal;color:#ff9a3c}
+    .tick-item b{color:#fff;font-weight:600}
+    @keyframes tick{to{transform:translateX(-50%)}}
+    @media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+
+    /* ===== Glass harmony: cards black glass, buttons follow the page gradient ===== */
+    .card{background:linear-gradient(160deg,rgba(14,10,8,.62),rgba(0,0,0,.72));-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(255,255,255,.10);box-shadow:inset 0 1px 1px rgba(255,255,255,.10),0 28px 70px rgba(0,0,0,.55)}
+    .button.button{background:linear-gradient(180deg,rgba(255,196,120,.50) 0%,rgba(214,110,36,.40) 38%,rgba(70,30,10,.50) 72%,rgba(8,4,2,.72) 100%);-webkit-backdrop-filter:blur(14px) saturate(150%);backdrop-filter:blur(14px) saturate(150%);border:1px solid rgba(255,190,120,.32);color:#fff1e0;text-shadow:none;box-shadow:inset 0 1px 1px rgba(255,255,255,.35),inset 0 -8px 18px rgba(0,0,0,.35),0 14px 34px -14px rgba(255,140,50,.35)}
+    .button.button::before{display:none}
+    .button.button.secondary{background:linear-gradient(180deg,rgba(255,196,120,.16) 0%,rgba(70,30,10,.34) 55%,rgba(8,4,2,.68) 100%);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);border:1px solid rgba(255,190,120,.24);color:#ffe9d4;text-shadow:none;box-shadow:inset 0 1px 1px rgba(255,255,255,.22),inset 0 -8px 18px rgba(0,0,0,.35),0 10px 26px -14px rgba(0,0,0,.8)}
+    .button.instagram-button{background:linear-gradient(180deg,rgba(255,196,120,.16) 0%,rgba(70,30,10,.34) 55%,rgba(8,4,2,.68) 100%);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);border:1px solid rgba(255,190,120,.24);color:#ffe9d4;text-shadow:none;box-shadow:inset 0 1px 1px rgba(255,255,255,.22),inset 0 -8px 18px rgba(0,0,0,.35),0 10px 26px -14px rgba(0,0,0,.8)!important}
+  
+    /* ===== Lead-magnet v2 ===== */
+    .shell{padding-top:clamp(18px,4vw,40px)}
+    .hero{text-align:center}
+    .hero h1{max-width:20ch;margin:0 auto;font-size:clamp(28px,5.4vw,46px);line-height:1.35}
+    .hl{background:linear-gradient(100deg,#ff8a1f,#ffc58a);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+    .mock{position:relative;margin:34px auto 30px;width:100%;aspect-ratio:16/10}
+    .mock img{position:absolute;top:50%;border-radius:12px;object-fit:cover;aspect-ratio:16/10;border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 60px rgba(0,0,0,.6)}
+    .mock .side{width:46%;filter:blur(3.5px) brightness(.6);opacity:.85;transform:translateY(-50%) scale(.92)}
+    .mock .side.r{right:0}.mock .side.l{left:0}
+    .mock .mid{width:56%;left:50%;transform:translate(-50%,-50%);z-index:2;box-shadow:0 30px 80px rgba(0,0,0,.75),0 0 0 1px rgba(255,150,60,.35),0 0 40px -8px rgba(255,120,30,.45)}
+    .mock:after{content:"";position:absolute;inset:auto 0 -2px 0;height:28%;background:linear-gradient(transparent,#000);z-index:3;pointer-events:none}
+    .big{width:100%;min-height:68px;font-size:20px;justify-content:center;gap:14px}
+    .big:disabled{opacity:.45;cursor:not-allowed;filter:saturate(.6)}
+    .big.button.button{padding:9px 28px}
+    .big.button.button::after{margin-inline-start:auto;position:absolute;left:9px;top:50%;transform:translateY(-50%)}
+    .step-card{padding:clamp(24px,5vw,44px)}
+    .step-card .progress{margin-bottom:30px;border-radius:99px}
+    .q-title{text-align:center;max-width:none;margin:0 auto 26px;font-weight:700}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+    .field{width:100%;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:#252525;color:#fff;padding:20px 22px;font-size:18px;outline:0;min-height:68px}
+    .field::placeholder{color:#8a8a8a}
+    .field.ltr{direction:ltr;text-align:left}
+    .field.glow{animation:glow 1.8s ease-in-out infinite}
+    .field:focus{border-color:#ff9a3c}
+    .options{margin-bottom:20px}
+    .options.glow .option{animation:glow 1.8s ease-in-out infinite}
+    .option{border-radius:16px;padding:19px 20px;min-height:64px}
+    .option.selected{border-color:#ff9a3c;background:rgba(255,130,40,.14);box-shadow:0 0 0 1px rgba(255,150,60,.8),0 0 24px -2px rgba(255,120,30,.5)}
+    .option .radio{border-color:#a98f7b}.option.selected .radio{border:5px solid #ff9a3c}
+    @keyframes glow{0%,100%{box-shadow:0 0 0 1px rgba(255,140,50,.25),0 0 6px rgba(255,120,30,.1)}50%{box-shadow:0 0 0 1px rgba(255,170,90,.95),0 0 26px 3px rgba(255,120,30,.55)}}
+    .error{text-align:center;margin:0 0 14px}
+    .result h2{max-width:none}.result .plan{margin:22px 0}
+    @media(prefers-reduced-motion:reduce){.glow,.options.glow .option{animation:none!important}}
+    @media(max-width:560px){.field-row{grid-template-columns:1fr}.mock .side{width:50%}.mock .mid{width:64%}.big{font-size:18px}}
+
+    /* v3 tweaks */
+    .shell{padding-top:clamp(28px,6vw,56px)}
+    .hero h1{font-size:clamp(22px,4vw,34px);line-height:1.45;max-width:24ch}
+    .mock{aspect-ratio:100/40;margin:26px auto 24px}
+    .mock .mid{filter:blur(1.5px)}
+    .mock .side{filter:blur(6px) brightness(.55)}
+    .mock:after{height:18%}
+    .perks{list-style:none;margin:26px 0 0;padding:0}
+    .perks li{display:flex;align-items:center;justify-content:center;gap:10px;padding:15px 0;font-size:17px;color:#fff1e0;border-top:1px solid rgba(255,255,255,.12)}
+    .perks li:last-child{border-bottom:1px solid rgba(255,255,255,.12)}
+    .perks li:before{content:"✔";color:#ff9a3c;font-size:15px}
+  
+    @keyframes glowSoft{0%,100%{box-shadow:0 0 0 1px rgba(255,140,50,.18)}50%{box-shadow:0 0 0 1px rgba(255,160,80,.5),0 0 10px rgba(255,120,30,.22)}}
+    .options.glow .option{animation:glowSoft 2.4s ease-in-out infinite}
+
+    /* ===== v4: vertical centering, phone + desktop, compact white CTA ===== */
+    .shell{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding-top:clamp(20px,5vh,48px);padding-bottom:clamp(20px,5vh,48px)}
+    .hero,.step-card,.loading,.result{width:100%}
+
+    /* الأزرار (ابدأ / التالي): بحجم مضغوط، في الوسط، أبيض مع نص أسود */
+    #start.button.button,#next.button.button{display:flex;width:fit-content;min-width:230px;max-width:100%;min-height:58px;margin:0 auto;padding:9px 26px 9px 9px;justify-content:center;gap:14px;font-size:18px;font-weight:700;color:#000;text-shadow:none;border:0;background:linear-gradient(180deg,#ffffff 0%,#e6e6e6 100%);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:inset 0 1px 1px #fff,0 12px 30px -12px rgba(255,255,255,.35)}
+    #start.button.button::after,#next.button.button::after{position:static;transform:none;margin:0;width:40px;height:40px;background:#0b0b0b url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%222.4%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M20 12H5M11 5.5 4.5 12l6.5 6.5%22/%3E%3C/svg%3E") center/20px 20px no-repeat;box-shadow:none}
+    #start.button.button:disabled,#next.button.button:disabled{opacity:.4}
+
+    /* صفحة النتيجة في الوسط */
+    .result{text-align:center}
+    .result .result-copy{margin-left:auto;margin-right:auto}
+    .result .plan ol{text-align:right;max-width:520px;margin:14px auto 0}
+    .result-actions{justify-content:center}
+
+    @media(min-width:900px){.shell{width:min(820px,calc(100% - 64px))}}
+    @media(max-width:560px){#start.button.button,#next.button.button{min-width:min(230px,100%)}}
+
+    /* الخطة المجانية: عنوان + سهم للأسفل نحو زر Notion */
+    .result .plan.free-plan{border:0;padding:6px 0 0;margin:26px 0 18px;display:flex;flex-direction:column;align-items:center;gap:12px}
+    .result .free-plan h3{font-size:clamp(22px,4vw,28px)}
+    .down-arrow{width:34px;height:34px;color:#ff9a3c;animation:nudge 1.6s ease-in-out infinite}
+    @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+    @media(prefers-reduced-motion:reduce){.down-arrow{animation:none}}
+
+    /* ===== v5: premium glass question card (85% glass layer, content stays crisp) ===== */
+    body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(38rem 24rem at 15% 28%,rgba(255,122,24,.30),transparent 70%),radial-gradient(34rem 22rem at 88% 72%,rgba(255,176,96,.22),transparent 70%)}
+    .step-card{position:relative;isolation:isolate;border-radius:22px;background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 1px rgba(255,255,255,.22),0 30px 80px -20px rgba(0,0,0,.7)}
+    .step-card::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;opacity:.85;background:linear-gradient(145deg,rgba(255,255,255,.13) 0%,rgba(255,255,255,.04) 45%,rgba(255,130,40,.08) 100%);-webkit-backdrop-filter:blur(28px) saturate(170%);backdrop-filter:blur(28px) saturate(170%)}
+
+    /* ===== v6: text-only pill buttons (no arrow), soft white glow like the reference ===== */
+    #start.button.button,#next.button.button{min-width:260px;min-height:58px;padding:14px 44px;justify-content:center;font-size:18px;font-weight:700;letter-spacing:.02em;color:#141414;background:linear-gradient(180deg,#fafafa 0%,#ececec 100%);border:0;box-shadow:0 0 0 1px rgba(255,255,255,.35),0 0 26px 2px rgba(255,255,255,.28),0 14px 34px -12px rgba(0,0,0,.6)}
+    #start.button.button::after,#next.button.button::after{display:none}
+    #start.button.button:hover:not(:disabled),#next.button.button:hover:not(:disabled){filter:none;box-shadow:0 0 0 1px rgba(255,255,255,.5),0 0 34px 4px rgba(255,255,255,.38),0 14px 34px -12px rgba(0,0,0,.6)}
+    #next.button.button:disabled{opacity:.45;box-shadow:0 0 0 1px rgba(255,255,255,.2)}
+  </style>
+</head>
+<body>
+    <main class="shell">
+    <section id="intro" class="hero">
+      <h1>احصل على خطتك <span class="hl">المجانية</span> حتى تكبر البزنس تبعك لفوق <span class="hl"><span class="numeral">20</span> ألف دولار</span> فالشهر</h1>
+      <div class="mock" aria-hidden="true">
+        <img class="side r" src="img-foundation.jpg" alt="" loading="eager">
+        <img class="side l" src="img-conversion.jpg" alt="" loading="eager">
+        <img class="mid" src="img-engine.jpg" alt="" loading="eager">
+      </div>
+      <button id="start" class="button big">يلا نبدأ</button>
+      <ul class="perks"><li>أقل من <span class="numeral">30</span> ثانية للتجهيز</li><li>مجانية فقط لأول <span class="numeral">99</span> شخص</li></ul>
+    </section>
+    <section id="quiz" class="card step-card hidden" aria-live="polite">
+      <div class="progress"><span id="progress"></span></div>
+      <div id="questionArea"></div>
+      <p id="error" class="error hidden"></p>
+      <button id="next" class="button big" disabled>التالي</button>
+    </section>
+    <section id="loading" class="card loading hidden" aria-live="polite"><div class="spinner"></div><h2>نجهّز لك خطتك</h2><div class="final-progress"><span id="finalProgress"></span></div><p id="finalPercent" class="final-percent">0%</p></section>
+    <section id="result" class="card result hidden"></section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+    const NOTION_PAGES = {
+      foundation: "https://obtainable-ground-fc6.notion.site/Foundation-3ebe351c923280b699c8f13384716c22?pvs=73",
+      content_engine: "https://obtainable-ground-fc6.notion.site/Engine-3ebe351c9232806e9257ece6ba04169d?source=copy_link",
+      conversion: "https://obtainable-ground-fc6.notion.site/Conversion-3ebe351c923280698d59e3437a3702a5?source=copy_link"
+    };
+    const NOTION_ICON = '<svg viewBox="0 0 24 24" fill="#0b0806" aria-hidden="true"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>';
+    const SESSION_KEY = "contentToClientScorecardSessionV3";
+    const WEBHOOK_URL = "https://hook.eu1.make.com/t6lq5g3owb6tuzfvufjpy3zms9hnj1cg";
+    const choice = (label, group=null) => ({label, group});
+    const questions = [
+      {id:"identity",type:"identity",title:"وش اسمك الكامل وحساب الأنستقرام تبعك؟"},
+      {id:"biggest_problem",type:"choice",title:"وش هي أكبر مشكلة عندك فالمحتوى حاليًا؟",options:[
+        choice("عندك مشاهدات لكن ما تتحول لمتابعين.","conversion"),
+        choice("ماعندك انتباه ولا مشاهدات.","foundation"),
+        choice("المحتوى ياخذ مني وقت كثير وما في نظام يختصر علي.","content_engine")]},
+      {id:"monthly_income",type:"choice",title:"كم دخلك الشهري حاليًا؟",options:[
+        choice("$0 - $500"),choice("$500 - $2,000"),choice("$2,000 - $6,000"),choice("$6,000 - $10,000"),choice("أكثر من $10,000")]}
+    ];
+    const results = {
+      foundation:{title:"أكبر تسريب عندك هو:",hl:"الأساس",body:"المشكلة مو إنك تنشر أكثر. قبل أي محتوى لازم يكون واضح: مين عميلك، وش المشكلة اللي تحلها، وليش يختارك أنت.",plan:["اكتب عرضك في جملة واحدة.","حدد ملف عميل واحد (ICP) تبغى تخدمه الآن.","اكتب 5 آلام و5 رغبات و5 اعتراضات لهذا الشخص.","حدّث الـBio: من تساعد + النتيجة + الخطوة التالية.","انشر 3 فيديوهات تخاطب المشكلة مباشرة."],keyword:"FOUNDATION"},
+      content_engine:{title:"أكبر تسريب عندك هو:",hl:"نظام المحتوى",body:"عندك خبرة ونتائج حقيقية، لكن تحويلها لمحتوى متعب وعشوائي. ما تحتاج أفكار أكثر؛ تحتاج نظام يشتغل بدالك.",plan:["اجمع 5 نتائج حققها عملاؤك.","اكتب المشكلة قبل النتيجة وش اللي تغيّر.","حوّل كل نتيجة لفكرة تعليمية وفكرة Proof وفكرة تحويلية.","اعمل قائمة أفكار واحدة بدل البدء من الصفر.","خصّص يوم ثابت للتصوير ويوم للمراجعة والنشر."],keyword:"ENGINE"},
+      conversion:{title:"أكبر تسريب عندك هو:",hl:"التحويل",body:"محتواك يجلب اهتمام ومشاهدات، لكن الاهتمام وحده ما يصير عميل. تحتاج مسار واضح يحوّل المشاهد لمتابع ثم لعميل.",plan:["راجع آخر 10 فيديوهات: وش هدف كل فيديو؟","أضف CTA واضحة في نهاية كل محتوى تحويلي.","استخدم Lead Magnet واحد يحل مشكلة سريعة.","اكتب 3 صياغات مختلفة لدعوة الـDM.","تتبّع الرسائل المؤهلة، مو المشاهدات فقط."],keyword:"LEADS"}
+    };
+    let step = 0;
+    const answers = {};
+    const $ = s => document.querySelector(s);
+    const esc = t => String(t).replace(/[&<>'"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
+    const fmt = t => esc(t).replace(/([0-9٠-٩]+)/g,'<span class="numeral">$1</span>');
+    const cleanIg = v => v.trim().replace(/^https?:\/\/(www\.)?instagram\.com\//i,"").replace(/[\/?#].*$/,"").replace(/^@+/,"").replace(/\s+/g,"");
+    function persist(view="quiz",data=null){try{localStorage.setItem(SESSION_KEY,JSON.stringify({step,answers,view,data}))}catch(e){}}
+    function restore(){try{const sv=JSON.parse(localStorage.getItem(SESSION_KEY)||"null");if(!sv)return;Object.assign(answers,sv.answers||{});if(sv.view==="result"&&sv.data){$("#intro").classList.add("hidden");showResult(sv.data);return}if(Object.keys(answers).length){step=Math.min(Number(sv.step)||0,questions.length-1);$("#intro").classList.add("hidden");$("#quiz").classList.remove("hidden");render()}}catch(e){}}
+    function toast(m){const el=$("#toast");el.textContent=m;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),2800)}
+    function isValid(){
+      const q=questions[step];
+      if(q.type==="identity"){const n=($("#fullName")?.value||"").trim(),ig=cleanIg($("#igHandle")?.value||"");return n.length>=2&&ig.length>=2}
+      return !!answers[q.id]?.value;
+    }
+    function refresh(){
+      const q=questions[step];
+      $("#next").disabled=!isValid();
+      if(q.type==="identity"){["fullName","igHandle"].forEach(id=>{const el=$("#"+id);el.classList.toggle("glow",!el.value.trim())})}
+      else $(".options")?.classList.toggle("glow",!answers[q.id]?.value);
+    }
+    function render(){
+      const q=questions[step],saved=answers[q.id];
+      $("#progress").style.width=`${((step+1)/questions.length)*100}%`;
+      $("#next").textContent=step===questions.length-1?"اعرض خطتي":"التالي";
+      $("#error").classList.add("hidden");
+      let html=`<h1 class="q-title">${fmt(q.title)}</h1>`;
+      if(q.type==="identity"){
+        html+=`<div class="field-row"><input id="fullName" class="field" autocomplete="name" placeholder="الاسم الكامل" value="${esc(saved?.name||"")}"><input id="igHandle" class="field ltr" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="@instagram" value="${esc(saved?.instagram?"@"+saved.instagram:"")}"></div>`;
+      }else{
+        html+=`<div class="options">${q.options.map((o,i)=>{const sel=saved?.value===o.label;return `<button class="option${sel?" selected":""}" type="button" data-i="${i}" aria-pressed="${sel}"><span class="radio"></span><span>${fmt(o.label)}</span></button>`}).join("")}</div>`;
+      }
+      $("#questionArea").innerHTML=html;
+      document.querySelectorAll(".option").forEach(b=>b.addEventListener("click",()=>{const o=q.options[Number(b.dataset.i)];answers[q.id]={value:o.label,group:o.group||null};persist();render()}));
+      document.querySelectorAll(".field").forEach(f=>f.addEventListener("input",refresh));
+      refresh();
+    }
+    function capture(){
+      const q=questions[step];
+      if(q.type==="identity"){answers[q.id]={name:$("#fullName").value.trim(),instagram:cleanIg($("#igHandle").value)}}
+      persist();
+    }
+    function calculate(){const g=answers.biggest_problem?.group||"conversion";return {result:g}}
+    function structuredData(){
+      const {result}=calculate(),id=answers.identity||{};
+      return {submittedAt:new Date().toISOString(),result,name:id.name||"",instagram:id.instagram||"",answers:{biggest_problem:answers.biggest_problem?.value||"",monthly_income:answers.monthly_income?.value||"",contact:id.instagram||""}};
+    }
+    async function save(data){
+      try{await fetch(WEBHOOK_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)})}
+      catch(e){try{localStorage.setItem("contentToClientScorecard",JSON.stringify(data))}catch(_){}}
+    }
+    function copyKeyword(k){
+      const done=()=>toast(`تم نسخ كلمة ${k} — الصقها في رسالة Instagram.`);
+      if(navigator.clipboard?.writeText){navigator.clipboard.writeText(k).then(done).catch(()=>fb(k,done))}else fb(k,done);
+    }
+    function fb(k,done){const f=document.createElement("textarea");f.value=k;f.style.cssText="position:fixed;opacity:0";document.body.appendChild(f);f.select();document.execCommand("copy");f.remove();done()}
+    function showResult(data){
+      const item=results[data.result],first=(data.name||"").split(/\s+/)[0];
+      $("#result").innerHTML=`<p class="result-label">${first?`نتيجتك يا ${esc(first)}`:"نتيجتك"}</p><h2>${esc(item.title)} <span class="hl">${esc(item.hl)}</span></h2><p class="result-copy">${esc(item.body)}</p><div class="plan free-plan"><h3>هذه هي خطتك المجانية</h3><svg class="down-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v15M5.5 13 12 19.5 18.5 13"/></svg></div><div class="result-actions"><a class="button big has-icon" href="${esc(NOTION_PAGES[data.result])}" target="_blank" rel="noopener"><span>افتح خطتك في Notion</span><span class="btn-icon">${NOTION_ICON}</span></a></div>`;
+      $("#result").classList.remove("hidden");persist("result",data);
+    }
+    function showFinalLoading(data){
+      const bar=$("#finalProgress"),pc=$("#finalPercent"),set=v=>{bar.style.width=v+"%";pc.textContent=v+"%"};
+      persist("result",data);$("#quiz").classList.add("hidden");$("#loading").classList.remove("hidden");set(0);void save(data);
+      setTimeout(()=>set(28),160);setTimeout(()=>set(64),700);setTimeout(()=>set(99),1450);
+      setTimeout(()=>{$("#loading").classList.add("hidden");showResult(data)},3000);
+    }
+    $("#start").addEventListener("click",()=>{$("#intro").classList.add("hidden");$("#quiz").classList.remove("hidden");persist();render()});
+    $("#next").addEventListener("click",()=>{
+      if(!isValid()){return}
+      capture();
+      if(step<questions.length-1){step++;persist();render();return}
+      showFinalLoading(structuredData());
+    });
+    restore();
+  </script>
+</body>
+</html>
